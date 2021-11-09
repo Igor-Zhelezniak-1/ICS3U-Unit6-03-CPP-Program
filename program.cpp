@@ -32,15 +32,15 @@ main() {
     std::array<int, 10> randomNumbers;
     int randomNumber;
     int smallestNumber;
+    std::random_device rseed;
+    std::mt19937 rgen(rseed());  // mersenne_twister
+    std::uniform_int_distribution<int> idist(-100, 100);  // [0,100]
 
     std::cout << "Starting..." << std::endl;
 
     std::cout << "" << std::endl;
 
     for (int loopCounter = 0; loopCounter < 10; loopCounter++) {
-        std::random_device rseed;
-        std::mt19937 rgen(rseed());  // mersenne_twister
-        std::uniform_int_distribution<int> idist(-100, 100);  // [0,100]
         randomNumber = idist(rgen);
         randomNumbers[loopCounter] = randomNumber;
         std::cout << "The random number " << loopCounter + 1
