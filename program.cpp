@@ -12,7 +12,7 @@ template<size_t N>
 int numberCalculator(std::array<int, N> randomNumbers) {
     // this functions add up all the numbers in the list
 
-    int number = randomNumbers[1];
+    int number = randomNumbers[0];
 
     for (int counter = 0; counter < randomNumbers.size(); counter++) {
         if (randomNumbers[counter] < number) {
@@ -31,7 +31,6 @@ main() {
 
     std::array<int, 10> randomNumbers;
     int randomNumber;
-    int summ = 0;
     int smallestNumber;
 
     std::cout << "Starting..." << std::endl;
